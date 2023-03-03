@@ -28,7 +28,7 @@ export default function PlacesPage() {
       </>
     );
   }
-
+  function addPhotoByLink() {}
   return (
     <div>
       {action !== "new" && (
@@ -66,17 +66,29 @@ export default function PlacesPage() {
 
             <input
               type="text"
+              value={title}
+              onChange={(ev) => setTitle(ev.target.value)}
               placeholder="title, for example: My lovely apt"
             />
 
             {/* address */}
             {preInput("Address", "Address to this place")}
-            <input type="text" placeholder="address" />
+            <input
+              type="text"
+              value={address}
+              onChange={(ev) => setAddress(ev.target.value)}
+              placeholder="address"
+            />
 
             {/* photos */}
             {preInput("Photos", "more = better")}
             <div className="flex gap-2">
-              <input type="text" placeholder={"Add using link ...jpg"} />
+              <input
+                value={photoLink}
+                onChange={(ev) => setPhotoLink(ev.target.value)}
+                type="text"
+                placeholder={"Add using link ...jpg"}
+              />
               <button className="bg-gray-200 px-4 rounded-2xl">
                 Add&nbsp;photo
               </button>
@@ -103,7 +115,10 @@ export default function PlacesPage() {
 
             {/* description */}
             {preInput("Description", "description of the place")}
-            <textarea />
+            <textarea
+              value={description}
+              onChange={(ev) => setDescription(ev.target.value)}
+            />
 
             {/* perks */}
             {preInput("Perks", "select all the perks of your place")}
@@ -114,7 +129,10 @@ export default function PlacesPage() {
 
             {/* extra info */}
             {preInput("Extra info", "house rules, etc")}
-            <textarea />
+            <textarea
+              value={extraInfo}
+              onChange={(ev) => setExtraInfo(ev.target.value)}
+            />
 
             {/* check in and out times */}
             {preInput(
@@ -125,15 +143,29 @@ export default function PlacesPage() {
             <div className="grid gap-2 sm:grid-cols-3">
               <div>
                 <h3 className="mt-2 -mb-1">Check in time</h3>
-                <input type="text" placeholder="14:00" />
+                <input
+                  type="text"
+                  value={checkIn}
+                  onChange={(ev) => setCheckIn(ev.target.value)}
+                  placeholder="14"
+                />
               </div>
               <div>
                 <h3 className="mt-2 -mb-1">Check out time</h3>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={checkOut}
+                  onChange={(ev) => setCheckOut(ev.target.value)}
+                  placeholder="11"
+                />
               </div>
               <div>
                 <h3 className="mt-2 -mb-1">Max no of guests</h3>
-                <input type="text" />
+                <input
+                  type="number"
+                  value={maxGuests}
+                  onChange={(ev) => setMaxGuests(ev.target.value)}
+                />
               </div>
             </div>
 

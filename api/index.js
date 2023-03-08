@@ -61,15 +61,33 @@ app.post("/register", async (req, res) => {
     var mailOptions = {
       from: "menotify32@gmail.com",
       to: email,
-      subject: "Welcome to AlgoMaster!",
-      text: `AlgoMaster is a competitve programming content site. It contains well written and quality code which will help you to upskill your learning. Best Regards AlgoMaster Team.`,
+      subject: "Welcome to A I R N Y C!",
+      text: `Dear User,
+
+      Welcome to A I R N Y C! We are thrilled to have you join our community and we look forward to providing you with a great online experience.
+      
+      At A I R N Y C, we strive to provide our users with the best possible experience, and we are constantly working to improve our platform and services. Whether you're here to connect with others, find information, or explore our content, we want to make sure that you have everything you need to get the most out of your time on our website.
+      
+      To help you get started, we have provided some useful resources and tips for using our website. These include [list of resources or tips], which we hope will be helpful as you explore our platform.
+      
+      We are committed to providing a safe and welcoming community for all of our users, and we encourage you to reach out to us if you have any questions, concerns, or suggestions. Our support team is always available to assist you and we look forward to hearing from you.
+      
+      Thank you for choosing A I R N Y C. We hope that you enjoy your time on our website and we look forward to connecting with you soon!
+      
+      Best regards,
+      
+      A I R N Y C Team
+      
+      
+      
+      `,
     };
 
     transport.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error);
       } else {
-        console.log("Email sent" + info.response);
+        // console.log("Email sent" + info.response);
       }
     });
     const userDoc = await User.create({

@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const imageDownloader = require("image-downloader");
 const multer = require("multer");
 const fs = require("fs");
+var nodemailer = require("nodemailer");
 
 require("dotenv").config();
 const app = express();
@@ -41,6 +42,14 @@ function getUserDataFromReq(req) {
   });
 }
 
+var transport = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "menotify32@gmail.com",
+    pass: "llflpbpswsjyjqqb",
+  },
+});
+
 app.get("/test", (req, res) => {
   res.json("test ok");
 });
@@ -49,6 +58,20 @@ app.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
+    var mailOptions = {
+      from: "menotify32@gmail.com",
+      to: email,
+      subject: "Welcome to AlgoMaster!",
+      text: `AlgoMaster is a competitve programming content site. It contains well written and quality code which will help you to upskill your learning. Best Regards AlgoMaster Team.`,
+    };
+
+    transport.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent" + info.response);
+      }
+    });
     const userDoc = await User.create({
       name,
       email,

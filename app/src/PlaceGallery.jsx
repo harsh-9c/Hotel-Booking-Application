@@ -159,7 +159,7 @@ export default function PlaceGallery({ place }) {
           {place.photos?.[1] && (
             <Image
               onClick={() => setShowAllPhotos(true)}
-              className="aspect-square cursor-pointer object-cover"
+              className="aspect-square cursor-pointer object-cover "
               src={place.photos[1]}
               alt=""
             />

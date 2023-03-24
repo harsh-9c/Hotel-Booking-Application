@@ -16,93 +16,47 @@ var items;
 const Carousel = () => {
   items = [
     <div>
-      {/* <img
-        alt="none found :)"
-        className="carousel-img"
-        src={
-          "https://a0.muscache.com/im/pictures/b1113b35-9e55-4393-9e97-7346e4526b4a.jpg?im_w=1200"
-        }
-        onDragStart={handleDragStart}
-        role="presentation"
-      /> */}
       <ion-icon name="logo-tableau" size="large" color="gray"></ion-icon>
       <br />
-      <p>Arctic</p>
-      {/* <p>
-        {coins[0]?.name} &nbsp;
-        {coins[0]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Arctic</div>
     </div>,
 
     <div>
-      {/* <img
-        alt="none found :)"
-        className="carousel-img"
-        src={
-          "https://a0.muscache.com/im/pictures/b1113b35-9e55-4393-9e97-7346e4526b4a.jpg?im_w=1200"
-        }
-        onDragStart={handleDragStart}
-        role="presentation"
-      /> */}
       <ion-icon name="fast-food-outline" size="large"></ion-icon>
       <br />
-      <p>Cusine</p>
-      {/* <p>
-        {coins[1]?.name} &nbsp;
-        {coins[1]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Cusine</div>
     </div>,
     <div>
       <ion-icon name="boat-outline" size="large"></ion-icon>
 
       {/* <br /> */}
       <br />
-      <p>Cruise</p>
+      <div className="text-gray-700">Cruise</div>
     </div>,
     <div>
       <ion-icon name="storefront-outline" size="large"></ion-icon>
       <br />
-      <p>Huts</p>
-      {/* <p>
-        {coins[3]?.name} &nbsp;
-        {coins[3]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Huts</div>
     </div>,
     <div>
       <ion-icon name="game-controller-outline" size="large"></ion-icon>
       <br />
-      <p>Play</p>
-      {/* <p>
-        {coins[4]?.name} &nbsp;
-        {coins[4]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Play</div>
     </div>,
     <div>
       <ion-icon name="thunderstorm-outline" size="large"></ion-icon>
       <br />
-      <p>Monsoon</p>
-      {/* <p>
-        {coins[5]?.name} &nbsp;
-        {coins[5]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Monsoon</div>
     </div>,
-    <div className="items-center justify-center">
+    <div>
       <ion-icon name="flame-outline" size="large"></ion-icon>
       <br />
-      <div>Trending</div>
-      {/* <p>
-        {coins[6]?.name} &nbsp;
-        {coins[6]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Trending</div>
     </div>,
     <div>
       <ion-icon name="bed-outline" size="large"></ion-icon>
       <br />
-      <p>Private rooms</p>
-      {/* <p>
-        {coins[7]?.name} &nbsp;
-        {coins[7]?.price_change_percentage_24h.toFixed(2)}%
-      </p> */}
+      <div className="text-gray-700">Private rooms</div>
     </div>,
   ];
 
@@ -118,7 +72,7 @@ const Carousel = () => {
       animationType="slide"
       autoPlayStrategy="none"
       infinite="true"
-      disableButtonsControls="false"
+      disableButtonsControls="true"
       disableDotsControls="false"
       touchMoveDefaultEvents
       // autoPlayControls

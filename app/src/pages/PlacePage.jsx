@@ -31,9 +31,15 @@ export default function PlacePage() {
             <h2 className="font-semibold text-2xl">Description</h2>
             {place.description}
           </div>
-          Check-in: {place.checkIn} <br />
-          Check-out: {place.checkOut} <br />
-          Max number of guests: {place.maxGuests} <br />
+          <span className="font-semibold text-xl">Check-in:</span>{" "}
+          {place.checkIn}
+          <br />
+          <span className="font-semibold text-xl">Check-out:</span>{" "}
+          {place.checkOut}
+          <br />
+          <span className="font-semibold text-xl">Max no of guests:</span>{" "}
+          {place.maxGuests}
+          <br />
         </div>
         <div>
           <BookingWidget place={place} />
@@ -45,6 +51,33 @@ export default function PlacePage() {
         </div>
         <div className="mb-4 mt-2 text-sm text-gray-700 leading-5">
           {place.extraInfo}
+        </div>
+      </div>
+      <div className="bg-white -mx-8 px-8 py-8 border-t">
+        <div>
+          <h2 className="font-semibold text-2xl">What this place offers</h2>
+        </div>
+        <div className="mb-4 mt-2 text-xl text-gray-700 leading-5">
+          {place.perks.length > 0 &&
+            place.perks.map((perk) => (
+              <ul style={{ listStyle: "disc" }} className="m-2">
+                <li>{perk}</li>
+              </ul>
+            ))}
+        </div>
+      </div>
+      <div className="bg-white -mx-8 px-8 py-8 border-t">
+        <div>
+          <h2 className="font-semibold text-2xl">Where you’ll be</h2>
+        </div>
+        <div className="mb-4 mt-2 text-xl text-gray-700 leading-5">
+          <iframe
+            src="https://maps.google.com/maps?q=35.856737,10.606619&z=15&output=embed"
+            width="100%"
+            height="400"
+            // frameborder="0"
+            // style="border:0"
+          ></iframe>
         </div>
       </div>
     </div>
